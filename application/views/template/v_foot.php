@@ -1,3 +1,5 @@
+</body>
+
 <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -15,7 +17,7 @@
         title: 'Berhsil!',
         text: suksesData,
         icon: 'success',
-        confirmButtonColor: 'limegreen',
+        confirmButtonColor: 'mediumseagreen',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -29,7 +31,7 @@
       title: 'Gagal!',
       text: gagalData,
       icon: 'error',
-      confirmButtonColor: 'limegreen',
+      confirmButtonColor: 'mediumseagreen',
       confirmButtonText: 'OK'
     }).then((result) =>{
       if (result.value){
@@ -43,7 +45,7 @@
         title: 'Peringatan!',
         text: peringatanData,
         icon: 'warning',
-        confirmButtonColor: 'limegreen',
+        confirmButtonColor: 'mediumseagreen',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
