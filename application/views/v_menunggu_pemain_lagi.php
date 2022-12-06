@@ -5,7 +5,7 @@
         <span class="visually-hidden"></span>
       </div>
 
-      <h3 class="text-light mt-4"><b>Menunggu pemain lain...</b></h3>
+      <h3 class="text-light mt-4"><b>Mencari ulang lawan...</b></h3>
     </div>
   </div>
 </div>

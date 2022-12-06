@@ -8,12 +8,57 @@
 		}
 
 		public function index(){
-			$data['title'] = 'Ayo main GamSuit!';
-
 			$this->form_validation->set_rules('nama_pemain', 'Nama', 'required|trim');
-			$this->session->unset_userdata('id_pemain');
 
       if($this->form_validation->run() == FALSE){
+				$data['title'] = 'Ayo main GamSuit!';
+
+				$this->db->where('status_pertandingan', 'Sedang bermain');
+				$this->db->where('id_pemain_1', $this->session->userdata('id_pemain'));
+				$this->db->or_where('id_pemain_2', $this->session->userdata('id_pemain'));
+				$pertandingan1 = $this->db->get('tabel_pertandingan')->row_array();
+
+				$this->db->where('status_pertandingan', 'Belum mulai');
+				$this->db->where('id_pemain_1', $this->session->userdata('id_pemain'));
+				$this->db->or_where('id_pemain_2', $this->session->userdata('id_pemain'));
+				$pertandingan2 = $this->db->get('tabel_pertandingan')->row_array();
+
+				if($pertandingan1){
+					$this->db->where('id_pertandingan', $pertandingan1['id_pertandingan']);
+					$this->db->delete('tabel_rincian_pertandingan');
+
+					$this->db->where('id_pertandingan', $pertandingan1['id_pertandingan']);
+					$this->db->delete('tabel_pemenang');
+
+					if($pertandingan1['id_pemain_1'] == $this->session->userdata('id_pemain')){
+						$this->db->set('id_pemain_1', NULL);
+						$this->db->set('status_pertandingan', 'Belum mulai');
+						$this->db->where('id_pertandingan', $pertandingan1['id_pertandingan']);
+						$this->db->update('tabel_pertandingan');
+
+						$this->db->where('id_pemain', $this->session->userdata('id_pemain'));
+						$this->db->delete('tabel_pemain');
+					}
+					elseif($pertandingan1['id_pemain_2'] == $this->session->userdata('id_pemain')){
+						$this->db->set('id_pemain_2', NULL);
+						$this->db->set('status_pertandingan', 'Belum mulai');
+						$this->db->where('id_pertandingan', $pertandingan1['id_pertandingan']);
+						$this->db->update('tabel_pertandingan');
+
+						$this->db->where('id_pemain', $this->session->userdata('id_pemain'));
+						$this->db->delete('tabel_pemain');
+					}
+				}
+				elseif($pertandingan2){
+					$this->db->where('id_pertandingan', $pertandingan2['id_pertandingan']);
+					$this->db->delete('tabel_pertandingan');
+
+					$this->db->where('id_pemain', $this->session->userdata('id_pemain'));
+					$this->db->delete('tabel_pemain');
+				}
+
+				$this->session->unset_userdata('id_pemain');
+
 				$this->load->view('template/v_head', $data);
 				$this->load->view('v_beranda');
 				$this->load->view('template/v_foot');

@@ -17,7 +17,7 @@
   <script type="text/javascript" src="<?= base_url('assets/vendor/sweetalert/sweetalert.min.js') ?>"></script>
   <script type="text/javascript" src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
 
-  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/img/logo-1.png') ?>">
+  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/img/logo.png') ?>">
 
   <title><?= $title ?></title>
 
@@ -25,22 +25,49 @@
     ::-webkit-scrollbar{
       width: 0px;
     }
+
+    #sweet{ position: fixed; z-index: 100 }
   </style>
 </head>
 
 <?php if($this->session->flashdata('sukses')) : ?>
-  <div class="sukses-data" data-sukses="<?= $this->session->flashdata('sukses') ?>"></div>
+  <div id="sweet" class="sukses-data" data-sukses="<?= $this->session->flashdata('sukses') ?>"></div>
   <?php unset($_SESSION['sukses']) ?>
 <?php endif ?>
 
 <?php if($this->session->flashdata('gagal')) : ?>
-  <div class="gagal-data" data-gagal="<?= $this->session->flashdata('gagal') ?>"></div>
+  <div id="sweet" class="gagal-data" data-gagal="<?= $this->session->flashdata('gagal') ?>"></div>
   <?php unset($_SESSION['gagal']) ?>
 <?php endif ?>
 
 <?php if($this->session->flashdata('peringatan')) : ?>
-  <div class="peringatan-data" data-peringatan="<?= $this->session->flashdata('peringatan') ?>"></div>
+  <div id="sweet" class="peringatan-data" data-peringatan="<?= $this->session->flashdata('peringatan') ?>"></div>
   <?php unset($_SESSION['peringatan']) ?>
+<?php endif ?>
+
+<?php if($this->session->flashdata('ronde')) : ?>
+  <div id="sweet" class="ronde-data" data-ronde="<?= $this->session->flashdata('ronde') ?>"></div>
+  <?php unset($_SESSION['ronde']) ?>
+<?php endif ?>
+
+<?php if($this->session->flashdata('menang')) : ?>
+  <div id="sweet" class="menang-data" data-menang="<?= $this->session->flashdata('menang') ?>"></div>
+  <?php unset($_SESSION['menang']) ?>
+<?php endif ?>
+
+<?php if($this->session->flashdata('kalah')) : ?>
+  <div id="sweet" class="kalah-data" data-kalah="<?= $this->session->flashdata('kalah') ?>"></div>
+  <?php unset($_SESSION['kalah']) ?>
+<?php endif ?>
+
+<?php if($this->session->flashdata('seri')) : ?>
+  <div id="sweet" class="seri-data" data-seri="<?= $this->session->flashdata('seri') ?>"></div>
+  <?php unset($_SESSION['seri']) ?>
+<?php endif ?>
+
+<?php if($this->session->flashdata('selesai')) : ?>
+  <div id="sweet" class="selesai-data" data-selesai="<?= $this->session->flashdata('selesai') ?>"></div>
+  <?php unset($_SESSION['selesai']) ?>
 <?php endif ?>
 
 <body>

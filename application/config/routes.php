@@ -53,4 +53,7 @@ $route['default_controller']   = 'beranda';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['menunggu-pemain'] = 'menunggu/pemain';
+$route['menunggu-pemain']           = 'menunggu/pemain';
+$route['menunggu-pilihan']          = 'menunggu/pilihan';
+$route['cari-pemain']               = 'menunggu/pemain_lagi';
+$route['main/(:any)/(:any)/(:any)'] = 'main/index/$1/$2/$3';

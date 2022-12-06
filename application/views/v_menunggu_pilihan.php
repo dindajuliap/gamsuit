@@ -5,7 +5,7 @@
         <span class="visually-hidden"></span>
       </div>
 
-      <h3 class="text-light mt-4"><b>Menunggu pemain lain...</b></h3>
+      <h3 class="text-light mt-4"><b>Menunggu pilihan lawan...</b></h3>
     </div>
   </div>
 </div>
@@ -22,15 +22,28 @@
     setInterval(() => {
       $.ajax({
         type  : 'ajax',
-        url   : "<?= base_url() ?>cari/pemain",
+        url   : "<?= base_url() ?>pilihan/index/<?= $p.'/'.$r ?>",
         async : false,
         dataType : 'json',
         success : function(data){
           if(data == 1){
-            window.location.href = '<?= base_url() ?>cari/ruangan';
+            window.location.href = "<?= base_url() ?>pilihan/main/<?= $p.'/'.$r ?>";
           }
-          else if(data == 2){
-            window.location.href = '<?= base_url() ?>cari/pertandingan';
+        }
+      });
+    }, 1000);
+  });
+
+  $(document).ready(function(){
+    setInterval(() => {
+      $.ajax({
+        type  : 'ajax',
+        url   : "<?= base_url() ?>cek/pemain/<?= $p ?>",
+        async : false,
+        dataType : 'json',
+        success : function(data){
+          if(data == 1){
+            window.location.href = '<?= base_url() ?>cari-pemain?p=<?= $p ?>';
           }
         }
       });

@@ -17,10 +17,10 @@
 
 <style>
   html, body{ height: 100%; width: 100%; background: black }
-  h1{ color: mediumseagreen }
+  h1{ color: darkseagreen }
   #desc{ color: silver; margin-top: -3px }
   #input{ border: 1px solid silver; padding: 27px 20px; background: none; width: 85%; border-radius: 0px; color: white }
-  #mulai{ border: 1px solid silver; color: white; background: mediumseagreen; width: 15%; border-radius: 0px }
+  #mulai{ border: 1px solid silver; color: white; background: darkseagreen; width: 15%; border-radius: 0px }
   #row{ width: 100%; height: 100%; display: table }
   #col{ width: 100%; display: table-cell; vertical-align: middle }
   #input:enabled{ background: none; color: silver; box-shadow: none }
