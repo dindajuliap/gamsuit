@@ -112,7 +112,7 @@
 				elseif($pemenang['id_pemain'] == NULL){
 					$this->session->set_flashdata('seri', $ronde);
 				}
-        else{
+        elseif(($pemenang['id_pemain'] != $this->session->userdata('id_pemain')) AND ($pemenang['id_pemain'] != NULL)){
           $this->session->set_flashdata('kalah', $ronde);
         }
         redirect('pertandingan?p='.$id_pertandingan.'&r='.$r);

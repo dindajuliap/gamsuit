@@ -23,7 +23,7 @@
         title: 'Berhasil!',
         text: suksesData,
         icon: 'success',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -37,7 +37,7 @@
       title: 'Gagal!',
       text: gagalData,
       icon: 'error',
-      confirmButtonColor: 'darkseagreen',
+      confirmButtonColor: 'lightslategrey',
       confirmButtonText: 'OK'
     }).then((result) =>{
       if (result.value){
@@ -51,7 +51,7 @@
         title: 'Peringatan!',
         text: peringatanData,
         icon: 'warning',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -65,7 +65,7 @@
       Swal.fire({
         title: 'Mulai Ronde ' + rondeData,
         icon: 'warning',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -79,7 +79,7 @@
       Swal.fire({
         title: 'Anda menang ronde ' + menangData + '!',
         icon: 'success',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -93,7 +93,7 @@
       Swal.fire({
         title: 'Anda kalah ronde ' + kalahData + '!',
         icon: 'error',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -107,7 +107,7 @@
       Swal.fire({
         title: 'Anda seri di ronde ' + seriData + '!',
         icon: 'warning',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){
@@ -121,7 +121,7 @@
       Swal.fire({
         title: 'Permainan telah selesai!',
         icon: 'warning',
-        confirmButtonColor: 'darkseagreen',
+        confirmButtonColor: 'lightslategrey',
         confirmButtonText: 'OK'
       }).then((result) =>{
         if (result.value){

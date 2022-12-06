@@ -31,30 +31,20 @@
 				$this->db->where('ronde', $ronde);
 				$pemain_2 = $this->db->get('tabel_rincian_pertandingan')->row_array();
 
-				if($pemain_1['pilihan_pemain'] == 'Batu' AND $pemain_2['pilihan_pemain'] == 'Gunting'){
+				if((($pemain_1['pilihan_pemain'] == 'Batu') AND ($pemain_2['pilihan_pemain'] == 'Gunting')) OR
+					 (($pemain_1['pilihan_pemain'] == 'Gunting') AND ($pemain_2['pilihan_pemain'] == 'Kertas')) OR
+					 (($pemain_1['pilihan_pemain'] == 'Kertas') AND ($pemain_2['pilihan_pemain'] == 'Batu')))
+				{
 					$id_pemain = $pemain_1['id_pemain'];
 					$id_kalah  = $pemain_2['id_pemain'];
 				}
-				elseif($pemain_1['pilihan_pemain'] == 'Gunting' AND $pemain_2['pilihan_pemain'] == 'Kertas'){
-					$id_pemain = $pemain_1['id_pemain'];
-					$id_kalah  = $pemain_2['id_pemain'];
-				}
-				elseif($pemain_1['pilihan_pemain'] == 'Kertas' AND $pemain_2['pilihan_pemain'] == 'Batu'){
-          $id_pemain = $pemain_1['id_pemain'];
-					$id_kalah  = $pemain_2['id_pemain'];
-        }
-        elseif($pemain_2['pilihan_pemain'] == 'Batu' AND $pemain_1['pilihan_pemain'] == 'Gunting'){
+				elseif((($pemain_2['pilihan_pemain'] == 'Batu') AND ($pemain_1['pilihan_pemain'] == 'Gunting')) OR
+							 (($pemain_2['pilihan_pemain'] == 'Gunting') AND ($pemain_1['pilihan_pemain'] == 'Kertas')) OR
+							 (($pemain_2['pilihan_pemain'] == 'Kertas') AND ($pemain_1['pilihan_pemain'] == 'Batu')))
+				{
 					$id_pemain = $pemain_2['id_pemain'];
 					$id_kalah  = $pemain_1['id_pemain'];
 				}
-				elseif($pemain_2['pilihan_pemain'] == 'Gunting' AND $pemain_1['pilihan_pemain'] == 'Kertas'){
-					$id_pemain = $pemain_2['id_pemain'];
-					$id_kalah  = $pemain_1['id_pemain'];
-				}
-				elseif($pemain_2['pilihan_pemain'] == 'Kertas' AND $pemain_1['pilihan_pemain'] == 'Batu'){
-          $id_pemain = $pemain_2['id_pemain'];
-					$id_kalah  = $pemain_1['id_pemain'];
-        }
 				elseif($pemain_1['pilihan_pemain'] == $pemain_2['pilihan_pemain']){
 					$id_pemain = NULL;
 				}

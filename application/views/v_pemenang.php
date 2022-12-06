@@ -32,8 +32,8 @@
   *{ box-sizing: border-box }
   #menang{ color: darkseagreen }
   #kalah{ color: darksalmon }
-  #main{ padding: 7px 50px; margin: auto; color: white; background: none; border: 1px solid white; border-radius: 0 }
-  #main:hover{ color: white; background: black; border: 1px solid black }
+  #main{ padding: 7px 50px; margin: auto; color: lightsteelblue; background: none; border: 1px solid lightsteelblue; border-radius: 0 }
+  #main:hover{ color: white; background: lightslategrey; border: 1px solid lightslategrey }
   h3{ margin-top: -5px; color: white }
   body{ background: #C4E4FF; background: radial-gradient(circle, hsl(223, 20%,12%), hsl(223, 20%,22%)); background: radial-gradient(circle, hsl(223, 40%,22%), hsl(223, 40%,12%)); overflow: hidden; height: 100vh; width: 100%; user-select: none; padding: 0; margin: 0 }
   #row{ width: 100%; height: 100%; display: table }

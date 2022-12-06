@@ -11,7 +11,7 @@
 </div>
 
 <style>
-  html, body{ height: 100%; width: 100%; background: black }
+  html, body{ height: 100%; width: 100%; background: #C4E4FF; background: radial-gradient(circle, hsl(223, 20%,12%), hsl(223, 20%,22%)); background: radial-gradient(circle, hsl(223, 40%,22%), hsl(223, 40%,12%)); }
   #row{ width: 100%; height: 100%; display: table }
   #col{ display: table-cell; vertical-align: middle }
   #spinner{ height: 120px; width: 120px; font-size: 50px }

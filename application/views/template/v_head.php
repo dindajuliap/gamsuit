@@ -17,7 +17,7 @@
   <script type="text/javascript" src="<?= base_url('assets/vendor/sweetalert/sweetalert.min.js') ?>"></script>
   <script type="text/javascript" src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
 
-  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/img/logo.png') ?>">
+  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/img/gamsuit.png') ?>">
 
   <title><?= $title ?></title>
 
